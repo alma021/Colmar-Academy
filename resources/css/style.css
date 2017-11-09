@@ -52,18 +52,17 @@ p {
   font-family: 'Merriweather', serif;
 }/* serif for brand name & text in Latin */
 
-
-
 .blue {
-    background-color: hsl(0, 0%, 86%);
+  background-color: hsl(0, 0%, 86%);
 }
 
 .image-cont,
 .video-cont {
-    overflow: hidden;
+  overflow: hidden;
 }
 
-.image-cont img {
+.image-cont img,
+.video-cont video {
   max-width: 100%;
   height: auto;
   display: block;
@@ -74,23 +73,17 @@ img.mobile {
 }
 
 ul {
-    list-style: none;
+  list-style: none;
 }
 
 a,
 .goto {
-    text-decoration: none;
-    font-size: 1.125rem;
+  text-decoration: none;
+  font-size: 1.125rem;
 }
 
 a:hover {
-    color: hsl(120, 61%, 50%);
-}
-
-@media only screen and (max-width: 990px) {
-  html {
-    font-size: 14px;
-  }
+  color: hsl(120, 61%, 50%);
 }
 
 /* Header */
@@ -135,42 +128,70 @@ header nav li {
   padding-left: 1rem;
 }
 
+@media only screen and (max-width: 619px) {
+  header .logo p,
+  header .desktop {
+    display: none;
+  }
+
+  header .head-cont {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+    margin: auto;
+  }
+
+  header .mobile {
+    display: initial;
+    width: 75%;
+  }
+
+  header .logo {
+    width: 25%;
+  }
+
+  header .logo img {
+    margin: auto;
+  }
+
+  header .mobile li {
+    margin: auto;
+  }
+}
+
 /* Banner */
 
 .ban-cont {
-  display: flex;
+    display: flex;
 }
 
 .ban-cont .image-cont {
-  width: 60%;
-  margin: 2rem 1.5rem;
+    width: 60%;
+    margin: 2rem 1.5rem;
 }
 
 .ban-cont .image-cont img {
-  width: 100%;
-  height: 40.625rem;
+    width: 100%;
+    height: 40.625rem;
 }
 
-.banner .ban {
-  margin: auto 1.5rem;
+.banner .ban-text {
+    margin: auto 1.5rem;
 }
 
-.banner .text h1 {
-  color: hsl(180, 16%, 20%);
-}
-
-.banner .text p {
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
-  font-size: 1.175rem;
-  line-height: 2rem;
-  font-weight: 500;
+.banner .ban-text p {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.175rem;
+    line-height: 2rem;
+    font-weight: 500;
 }
 
 .banner .button {
-  text-align: center;
-  padding: .5rem;
-  background-color: hsl(180, 16%, 20%);
+    text-align: center;
+    padding: .5rem;
+    background-color: hsl(180, 16%, 20%);
 }
 
 .banner .button:hover {
@@ -178,75 +199,146 @@ header nav li {
 }
 
 .banner .button a {
-  color: white;
+    color: white;
+}
+
+@media only screen and (max-width: 600px) {
+    .ban-cont {
+        flex-direction: column;
+        align-content: space-between;
+    }
+    
+    .banner .image-cont {
+        width: auto;
+        margin: 0;
+    }
+    
+    .banner .ban-text {
+      margin: 0;
+      padding: 2rem 1rem 2rem 1rem;
+    }
+    
+    .banner .ban-text p {
+        margin-top: 2rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .banner .button {
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 
 /* the Intro-Guide section */
 
 .intro {
-  padding: 2rem 0 2rem 1.5rem;
+    padding: 2rem 0 2rem 1.5rem;
 }
 
 .intro .guide {
-  display: flex;
+    display: flex;
 }
 
 .student {
-  width: 60%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: stretch;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
 }
 
 .about {
-  margin-left: 1.5rem;
-  width: 40%;
+    margin-left: 1.5rem;
+    width: 40%;
 }
 
 .event {
-  display: flex;
-  align-items: center;
-  border: 1px solid hsl(0, 0%, 86%);
+    display: flex;
+    align-items: center;
+    border: 1px solid hsl(0, 0%, 86%);
 }
 
 .event .image-cont {
-  width: 35%;
+    width: 35%;
 }
 
 .event img {
-  padding: 1rem;
+    padding: 1rem;
 }
 
-.student .text {
-  width: 100%;
+.student-text {
+    width: 100%;
 }
 
-.student .text h2 {
-  padding-top: 2rem;
-  padding-bottom: 1.5rem;
-  font-size: 2rem;
+.student-text h2 {
+    padding-top: 2rem;
+    padding-bottom: 1.5rem;
+    font-size: 2rem;
 }
 
 #para {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
 }
 
-.about .text {
-  width: 65%;
+.about-text {
+    width: 65%;
+    padding-left: 1rem;
 }
 
-.about .text h3 {
+.about-text h5 {
+    margin-top: .5rem;
+    margin-bottom: .5rem;
 }
 
-.about .text h5 {
-  margin-top: .5rem;
-  margin-bottom: .5rem;
+.about-text .goto {
+    color: hsl(219, 79%, 66%);
 }
 
-.about .text .goto {
-  color: hsl(219, 79%, 66%);
+@media only screen and (max-width: 850px) {
+    .student,
+    .event img.desktop {
+        display: none;
+    }
+    
+    .event img.mobile {
+        display: block;
+    }
+    
+    .event {
+        flex-direction: column;
+        justify-content: space-between;
+        align-content: stretch;
+    }
+    
+    .intro {
+        padding: 1rem 1rem 2rem 1rem;
+    }
+    
+    .about {
+        margin-left: 0;
+        width: 100%;
+    }
+    
+    .event .image-cont {
+        width: 100%;
+    }
+    
+    .event img {
+        width: 100%;
+        padding: 0;
+        height: auto;
+    }
+    
+    .about-text {
+        width: 100%;
+        padding: 2rem 0 0 1rem;
+    }
+    
+    .campus.event {
+        margin-top: 4rem;
+        margin-bottom: 4rem;
+    }    
 }
 
 /* the 'Start Learning' section */
@@ -258,6 +350,11 @@ header nav li {
 .spec h2 {
     text-align: center;
     margin-bottom: 2rem;
+}
+
+.spec nav {
+    display: none;
+    margin: 1rem auto 2rem auto;
 }
 
 .fac-up {
@@ -275,7 +372,7 @@ header nav li {
 }
 
 .dep {
-    flex: 1
+    background-color: white;
 }
 
 .dep.comp,
@@ -289,8 +386,8 @@ header nav li {
     padding: 1rem 0 1.5rem 1rem;
 }
 
-.dep-text.mopad {
-    padding-bottom: 2.75rem;
+.dep img {
+    height: 100%;
 }
 
 .spec .dep-text h4 {
@@ -298,10 +395,49 @@ header nav li {
     margin-bottom: .5rem;
 }
 
+@media only screen and (max-width: 740px) {
+    .fac *:not(h3) {
+        display: none;
+    }
+    
+    .spec {
+        background-color: white;
+    }
+    
+    .spec nav {
+        display: initial;
+    }
+    
+    .spec h2 {
+        margin-bottom: 1rem;
+    }
+    
+    .spec nav li {
+        display: block;
+        background-color: hsl(0, 0%, 86%);
+        padding: 1rem 0 1.5rem 1rem;
+        margin-bottom: .5rem;
+    }
+    
+    .spec nav li:hover {
+        background-color: hsl(180, 16%, 20%);
+    }
+    
+    .spec nav a {
+        font-size: 1.625rem;
+        line-height: 1.8;
+        font-weight: 550;
+    }
+}
+
 /* the 'Thesis exhibit' section */
 
 .theses {
     padding: 2rem 0 2rem 1.5rem;
+}
+
+.theses div {
+    
 }
 
 .theses h2 {
@@ -330,11 +466,6 @@ header nav li {
     align-items: center;
 }
 
-.vid video {
-    width: 68.88875rem;
-    height: 38.75rem;
-}
-
 .vid-text {
     padding-top: 1.5rem;
     padding-bottom: 2rem;
@@ -360,11 +491,30 @@ header nav li {
 }
 
 .thes-text h3 {
-    line-height: 1.8;
+    line-height: 1.5;
 }
 
 .thes-text h5 {
     line-height: 1.2;
+}
+
+@media only screen and (max-width: 928px) {
+    .vid-text,
+    .mosamp {
+        display: none;
+    }
+    
+    .vid {
+        width: 100%;
+    }
+    
+    .theses {
+        padding-left: 0;
+    }
+    
+    .theses h2 {
+        margin-bottom: 1rem;
+    }
 }
 
 /* Footer */
@@ -383,5 +533,13 @@ footer {
     padding-left: 1rem;
 }
 
-
-
+@media only screen and (max-width: 510px) {
+    .privacy {
+        display: none;
+    }
+    
+    footer {
+        margin-top: 1.5rem;
+        padding-bottom: 1rem;
+    }
+}
